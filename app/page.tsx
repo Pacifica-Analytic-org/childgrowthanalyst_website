@@ -1,5 +1,6 @@
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-shell';
+import { StaticLink } from '@/components/static-link';
 import {
   Baby,
   BarChart3,
@@ -11,7 +12,6 @@ import {
   Ruler,
 } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const features = [
   {
@@ -198,8 +198,10 @@ export default function Home() {
             parent details.
           </p>
           <div className="privacy-links">
-            <Link href="/privacy">Read our Privacy Policy →</Link>
-            <Link href="/delete-account">Account deletion options →</Link>
+            <StaticLink href="/privacy">Read our Privacy Policy →</StaticLink>
+            <StaticLink href="/delete-account">
+              Account deletion options →
+            </StaticLink>
           </div>
         </div>
         <Cloud className="privacy-cloud" aria-hidden="true" />

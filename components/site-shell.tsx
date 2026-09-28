@@ -1,8 +1,8 @@
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { SiteHeader } from './site-header';
+import { StaticLink } from './static-link';
 
 export const supportEmail = 'support@childgrowthanalyst.com';
 
@@ -11,24 +11,24 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-main">
         <div className="footer-brand">
-          <Link className="brand" href="/">
+          <StaticLink className="brand" href="/">
             <Image src="/app-icon.png" alt="" width={40} height={40} />
             <span>Child Growth Analyst</span>
-          </Link>
+          </StaticLink>
           <p>Thoughtful growth tracking for parents and caregivers.</p>
         </div>
         <div className="footer-links">
           <div>
             <strong>Product</strong>
-            <Link href="/#features">Features</Link>
-            <Link href="/#how-it-works">How it works</Link>
-            <Link href="/support">Support</Link>
+            <StaticLink href="/#features">Features</StaticLink>
+            <StaticLink href="/#how-it-works">How it works</StaticLink>
+            <StaticLink href="/support">Support</StaticLink>
           </div>
           <div>
             <strong>Legal</strong>
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms">Terms of Use</Link>
-            <Link href="/delete-account">Delete account</Link>
+            <StaticLink href="/privacy">Privacy Policy</StaticLink>
+            <StaticLink href="/terms">Terms of Use</StaticLink>
+            <StaticLink href="/delete-account">Delete account</StaticLink>
           </div>
           <div>
             <strong>Contact</strong>

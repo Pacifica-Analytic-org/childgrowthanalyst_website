@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { StaticLink } from './static-link';
 
 type ActiveNavigation =
   | 'features'
@@ -67,12 +67,16 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="Child Growth Analyst home">
+      <StaticLink
+        className="brand"
+        href="/"
+        aria-label="Child Growth Analyst home"
+      >
         <Image src="/app-icon.png" alt="" width={40} height={40} />
         <span>Child Growth Analyst</span>
-      </Link>
+      </StaticLink>
       <nav aria-label="Main navigation">
-        <Link
+        <StaticLink
           className={navigationClass('features')}
           href="/#features"
           aria-current={
@@ -81,8 +85,8 @@ export function SiteHeader() {
           onClick={() => setActiveNavigation('features')}
         >
           Features
-        </Link>
-        <Link
+        </StaticLink>
+        <StaticLink
           className={navigationClass('how-it-works')}
           href="/#how-it-works"
           aria-current={
@@ -91,25 +95,25 @@ export function SiteHeader() {
           onClick={() => setActiveNavigation('how-it-works')}
         >
           How it works
-        </Link>
-        <Link
+        </StaticLink>
+        <StaticLink
           className={navigationClass('privacy')}
           href="/privacy"
           aria-current={activeNavigation === 'privacy' ? 'page' : undefined}
           onClick={() => setActiveNavigation('privacy')}
         >
           Privacy
-        </Link>
-        <Link
+        </StaticLink>
+        <StaticLink
           className={navigationClass('support')}
           href="/support"
           aria-current={activeNavigation === 'support' ? 'page' : undefined}
           onClick={() => setActiveNavigation('support')}
         >
           Support
-        </Link>
+        </StaticLink>
       </nav>
-      <Link
+      <StaticLink
         className={`header-cta ${navigationClass('availability') ?? ''}`}
         href="/#availability"
         aria-current={
@@ -118,7 +122,7 @@ export function SiteHeader() {
         onClick={() => setActiveNavigation('availability')}
       >
         Get the app
-      </Link>
+      </StaticLink>
     </header>
   );
 }
